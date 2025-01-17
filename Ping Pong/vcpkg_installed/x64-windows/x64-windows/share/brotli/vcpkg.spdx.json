@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/brotli-x64-windows-1.1.0#1-8079078a-1ea0-4993-8e94-e3d94793b3ac",
-  "name": "brotli:x64-windows@1.1.0#1 34c607903547fcf2013ef8e7a2d2faa2be23d55df68ff9e0f0317f6dbc31fb03",
+  "documentNamespace": "https://spdx.org/spdxdocs/brotli-x64-windows-1.1.0#1-269f3ec9-3b76-4c9a-95a6-d731b224da7b",
+  "name": "brotli:x64-windows@1.1.0#1 4801d5ded1cb8713d33a7939abbf43697376860cfee6ed335a3d4caa12e73578",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+      "Tool: vcpkg-2025-01-11-0f310537c75015100d200eb71b137f6376aad510"
     ],
-    "created": "2024-12-22T19:14:20Z"
+    "created": "2025-01-17T11:39:19Z"
   },
   "relationships": [
     {
@@ -98,7 +98,7 @@
       "name": "brotli",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "1.1.0#1",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/brotli",
+      "downloadLocation": "NOASSERTION",
       "homepage": "https://github.com/google/brotli",
       "licenseConcluded": "MIT",
       "licenseDeclared": "NOASSERTION",
@@ -109,7 +109,7 @@
     {
       "name": "brotli:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "34c607903547fcf2013ef8e7a2d2faa2be23d55df68ff9e0f0317f6dbc31fb03",
+      "versionInfo": "4801d5ded1cb8713d33a7939abbf43697376860cfee6ed335a3d4caa12e73578",
       "downloadLocation": "NONE",
       "licenseConcluded": "MIT",
       "licenseDeclared": "NOASSERTION",
@@ -133,7 +133,7 @@
   ],
   "files": [
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/brotli/emscripten.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/brotli/emscripten.patch",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
@@ -145,7 +145,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/brotli/fix-arm-uwp.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/brotli/fix-arm-uwp.patch",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
@@ -157,7 +157,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/brotli/install.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/brotli/install.patch",
       "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
@@ -169,7 +169,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/brotli/pkgconfig.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/brotli/pkgconfig.patch",
       "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
@@ -181,7 +181,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/brotli/portfile.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/brotli/portfile.cmake",
       "SPDXID": "SPDXRef-file-4",
       "checksums": [
         {
@@ -193,7 +193,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/brotli/usage",
+      "fileName": "./C:/vcpkg/vcpkg/ports/brotli/usage",
       "SPDXID": "SPDXRef-file-5",
       "checksums": [
         {
@@ -205,7 +205,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/brotli/vcpkg.json",
+      "fileName": "./C:/vcpkg/vcpkg/ports/brotli/vcpkg.json",
       "SPDXID": "SPDXRef-file-6",
       "checksums": [
         {

@@ -1,6 +1,0 @@
-Package: sfml
-Feature: network
-Architecture: x64-windows
-Multi-Arch: same
-Description: Use sfml-network library
-Status: install ok half-installed

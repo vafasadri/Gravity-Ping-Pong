@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/egl-registry-x64-windows-2024-01-25-2f601697-76aa-4e0a-a434-b24cc7fd809f",
-  "name": "egl-registry:x64-windows@2024-01-25 5f74062de398911c0cb3135ea50ae52b6672efbf35d39189e49983d719171e21",
+  "documentNamespace": "https://spdx.org/spdxdocs/egl-registry-x64-windows-2024-01-25-51a372b8-6e71-411a-854d-26599464ed07",
+  "name": "egl-registry:x64-windows@2024-01-25 47ed62f580448643d0fbb04919819b88f162912dab7f8a9630bb03d8fddf80ef",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+      "Tool: vcpkg-2025-01-11-0f310537c75015100d200eb71b137f6376aad510"
     ],
-    "created": "2024-12-22T19:15:23Z"
+    "created": "2025-01-17T11:36:28Z"
   },
   "relationships": [
     {
@@ -58,7 +58,7 @@
       "name": "egl-registry",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "2024-01-25",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/egl-registry",
+      "downloadLocation": "NOASSERTION",
       "homepage": "https://github.com/KhronosGroup/EGL-Registry",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
@@ -69,7 +69,7 @@
     {
       "name": "egl-registry:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "5f74062de398911c0cb3135ea50ae52b6672efbf35d39189e49983d719171e21",
+      "versionInfo": "47ed62f580448643d0fbb04919819b88f162912dab7f8a9630bb03d8fddf80ef",
       "downloadLocation": "NONE",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
@@ -93,7 +93,7 @@
   ],
   "files": [
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/egl-registry/copyright",
+      "fileName": "./C:/vcpkg/vcpkg/ports/egl-registry/copyright",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
@@ -105,7 +105,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/egl-registry/portfile.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/egl-registry/portfile.cmake",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
@@ -117,7 +117,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/egl-registry/vcpkg.json",
+      "fileName": "./C:/vcpkg/vcpkg/ports/egl-registry/vcpkg.json",
       "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {

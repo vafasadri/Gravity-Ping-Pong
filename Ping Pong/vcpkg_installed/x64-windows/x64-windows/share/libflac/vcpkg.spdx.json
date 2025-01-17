@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/libflac-x64-windows-1.4.3#2-2038ff5c-4b7d-4f1f-b76c-af199dba6715",
-  "name": "libflac:x64-windows@1.4.3#2 c1e8d95051323e8b73ab7ee4f28ee4a0e23ea0a24b1d74e7a60431aaa8661393",
+  "documentNamespace": "https://spdx.org/spdxdocs/libflac-x64-windows-1.4.3#2-5175fcfa-388e-4cbe-b55d-4a4e9b654328",
+  "name": "libflac:x64-windows@1.4.3#2 c2987bab112e5a55077fe29e6f1184057413dcd4243aabf47c8d181ecb8bb463",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+      "Tool: vcpkg-2025-01-11-0f310537c75015100d200eb71b137f6376aad510"
     ],
-    "created": "2024-12-22T19:17:32Z"
+    "created": "2025-01-17T11:42:56Z"
   },
   "relationships": [
     {
@@ -68,7 +68,7 @@
       "name": "libflac",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "1.4.3#2",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/libflac",
+      "downloadLocation": "NOASSERTION",
       "homepage": "https://xiph.org/flac/",
       "licenseConcluded": "BSD-3-Clause",
       "licenseDeclared": "NOASSERTION",
@@ -79,7 +79,7 @@
     {
       "name": "libflac:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "c1e8d95051323e8b73ab7ee4f28ee4a0e23ea0a24b1d74e7a60431aaa8661393",
+      "versionInfo": "c2987bab112e5a55077fe29e6f1184057413dcd4243aabf47c8d181ecb8bb463",
       "downloadLocation": "NONE",
       "licenseConcluded": "BSD-3-Clause",
       "licenseDeclared": "NOASSERTION",
@@ -103,7 +103,7 @@
   ],
   "files": [
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libflac/fix-compile-options.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libflac/fix-compile-options.patch",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
@@ -115,7 +115,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libflac/portfile.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libflac/portfile.cmake",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
@@ -127,7 +127,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libflac/usage",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libflac/usage",
       "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
@@ -139,7 +139,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libflac/vcpkg.json",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libflac/vcpkg.json",
       "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {

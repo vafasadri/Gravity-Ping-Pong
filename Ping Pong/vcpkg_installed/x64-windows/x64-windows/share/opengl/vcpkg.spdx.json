@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/opengl-x64-windows-2022-12-04#3-ed513f71-f462-4309-9d85-63735f0a99a9",
-  "name": "opengl:x64-windows@2022-12-04#3 34d81b6229cf57629a4d6e89f625ee548150003d3b5c53d01cff1aed21f9a1f3",
+  "documentNamespace": "https://spdx.org/spdxdocs/opengl-x64-windows-2022-12-04#3-d8e853eb-029b-49e0-94f2-fa05f6ec2701",
+  "name": "opengl:x64-windows@2022-12-04#3 f50d2b52884321d7c1f479be3e73359c5f522cdad71408f9fb0e6ed9c293b13f",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+      "Tool: vcpkg-2025-01-11-0f310537c75015100d200eb71b137f6376aad510"
     ],
-    "created": "2024-12-22T19:23:18Z"
+    "created": "2025-01-17T11:38:01Z"
   },
   "relationships": [
     {
@@ -78,7 +78,7 @@
       "name": "opengl",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "2022-12-04#3",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/opengl",
+      "downloadLocation": "NOASSERTION",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
       "copyrightText": "NOASSERTION",
@@ -88,7 +88,7 @@
     {
       "name": "opengl:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "34d81b6229cf57629a4d6e89f625ee548150003d3b5c53d01cff1aed21f9a1f3",
+      "versionInfo": "f50d2b52884321d7c1f479be3e73359c5f522cdad71408f9fb0e6ed9c293b13f",
       "downloadLocation": "NONE",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
@@ -98,7 +98,7 @@
   ],
   "files": [
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/opengl/glu.pc.in",
+      "fileName": "./C:/vcpkg/vcpkg/ports/opengl/glu.pc.in",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
@@ -110,7 +110,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/opengl/opengl.pc.in",
+      "fileName": "./C:/vcpkg/vcpkg/ports/opengl/opengl.pc.in",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
@@ -122,7 +122,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/opengl/portfile.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/opengl/portfile.cmake",
       "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
@@ -134,7 +134,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/opengl/usage",
+      "fileName": "./C:/vcpkg/vcpkg/ports/opengl/usage",
       "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
@@ -146,7 +146,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/opengl/vcpkg.json",
+      "fileName": "./C:/vcpkg/vcpkg/ports/opengl/vcpkg.json",
       "SPDXID": "SPDXRef-file-4",
       "checksums": [
         {

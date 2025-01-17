@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/sfml-x64-windows-2.6.2-071a30b4-d4d2-4bc2-9ce6-77b9b0564fa2",
-  "name": "sfml:x64-windows@2.6.2 3f1dd5b0b4d556d4b30f9675bcaf1ef59985162cacc107300a22c2ede26fd9bc",
+  "documentNamespace": "https://spdx.org/spdxdocs/sfml-x64-windows-2.6.2-3bb848cc-bdb1-4a23-9329-b9bc6ad2908d",
+  "name": "sfml:x64-windows@2.6.2 5c5c321eeebe21b079745f17b3402cb7c6603ceb035501598fb49dc79fb1087f",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+      "Tool: vcpkg-2025-01-11-0f310537c75015100d200eb71b137f6376aad510"
     ],
-    "created": "2024-12-22T19:35:35Z"
+    "created": "2025-01-17T11:44:11Z"
   },
   "relationships": [
     {
@@ -78,7 +78,7 @@
       "name": "sfml",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "2.6.2",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/sfml",
+      "downloadLocation": "NOASSERTION",
       "homepage": "https://github.com/SFML/SFML",
       "licenseConcluded": "Zlib",
       "licenseDeclared": "NOASSERTION",
@@ -89,7 +89,7 @@
     {
       "name": "sfml:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "3f1dd5b0b4d556d4b30f9675bcaf1ef59985162cacc107300a22c2ede26fd9bc",
+      "versionInfo": "5c5c321eeebe21b079745f17b3402cb7c6603ceb035501598fb49dc79fb1087f",
       "downloadLocation": "NONE",
       "licenseConcluded": "Zlib",
       "licenseDeclared": "NOASSERTION",
@@ -113,7 +113,7 @@
   ],
   "files": [
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/sfml/fix-dep-openal.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/sfml/fix-dep-openal.patch",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
@@ -125,7 +125,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/sfml/fix-dependencies.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/sfml/fix-dependencies.patch",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
@@ -137,7 +137,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/sfml/portfile.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/sfml/portfile.cmake",
       "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
@@ -149,7 +149,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/sfml/usage",
+      "fileName": "./C:/vcpkg/vcpkg/ports/sfml/usage",
       "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
@@ -161,7 +161,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/sfml/vcpkg.json",
+      "fileName": "./C:/vcpkg/vcpkg/ports/sfml/vcpkg.json",
       "SPDXID": "SPDXRef-file-4",
       "checksums": [
         {

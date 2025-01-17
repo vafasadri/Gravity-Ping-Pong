@@ -6,144 +6,19 @@
 #include <map>
 #include <algorithm>
 #include "Settings.hpp"
+#include "Global.hpp"
 void Reset();
 void ManageOpponent();
-std::pair<double, double> Quadratic(double a,double b,double c){
-	double delta = sqrt(b * b - 4 * a * c);
-	double x1 = (-b + delta) / 2 / a;
-	double x2 = (-b - delta) / 2 / a;
-	return { x1,x2 };
-}
-bool IsBetween(double val, double left, double right) {
-	if (left > right) std::swap(left, right);
-	return left <= val && val <= right;
-}
-double Distance(sf::Vector2f v1, sf::Vector2f v2) {
-	double dy = v2.y - v1.y;
-	double dx = v2.x - v1.x;
-	return sqrt(dy * dy - dx * dx);
-}
-
-struct CollisionEdge {
-	mutable bool colliding = false;
-	sf::Vector2f start{};
-	sf::Vector2f end{};
-	double distance(sf::Vector2f point) const {
-		double dy = end.y - start.y;
-		double dx = end.x - start.x;
-		// horizontal
-		if (dy == 0) return abs(point.y - start.y);
-		// vertical
-		if (dx == 0) return abs(point.x - start.x);
-		double slope = dy / dx;
-		double offset = start.y - slope * start.x;
 
 
-	
-		/*if (this.start.x == this.d.x) {
-			return Math.abs(point.x - this.d.x)
-		}
-		if (this.start.y == this.d.y) {
-			return Math.abs(point.y - this.d.y)
-		}
-
-		const slope = (this.d.y - this.start.y) / (this.d.x - this.start.x)
-			const b = -(slope * this.start.x) + this.start.y*/
-
-		return abs(dx * point.y - dy * point.x - (dx)*offset) / sqrt(dx * dx + dy * dy);
-	}
-	sf::Vector2f ClosestPoint(sf::Vector2f point) const {
-		sf::Vector2f H = { 0,0 };
-		double dy = end.y - start.y;
-		double dx = end.x - start.x;
-			if (dy == 0) {
-				H.x = point.x;
-				H.y = start.y;
-			}
-			else if (dx == 0) {
-				H.y = point.y; 
-				H.x = start.x;
-			}
-			else {
-				double slope = dy / dx;
-				double verticalSlope = -1 / slope;
-				double b = -(slope * start.x) + start.y;
-				double verticalB = -(verticalSlope * point.x) + point.y;
-			
-				H.x = (b - verticalB) / (verticalSlope - slope);
-				H.y = verticalB + verticalSlope * H.x;
-			}
-			if (!IsBetween(H.x, start.x, end.x) || !IsBetween(H.y, start.y, end.y)) H = { NAN,NAN };
-			return H;
-	}
-	std::pair<sf::Vector2f,sf::Vector2f> CollisionPoints(sf::Vector2f point,double radius) const {
-		
-		double dy = end.y - start.y;
-		double dx = end.x - start.x;
-		
-		double a = dy / dx;
-		double b = start.y - a * start.x;
-		double x0 = point.x;
-		double y0 = point.y;
-		double r = radius;
-		double z = b - y0;
-		// (x - x0)2 + (ax+ (b - y0))2 = radius2
-			// y = slope * x + b
-		// x^2 - 2xx0 + x0^2 +  a^2x^2 + 2ax(b-y0) + (b-y0)^2 = r^2
-		// a = a^2 + 1
-		// b = 2(b-y0 - x0)
-		// c = (b-y0)^2 + x0^2 - r^2
-		auto candidates = Quadratic(a * a + 1, 2 * (z - x0), z * z + x0 * x0 - r * r);
-
-
-		std::pair<sf::Vector2f, sf::Vector2f> xy = {
-			sf::Vector2f(candidates.first,candidates.first * a + b),
-			sf::Vector2f(candidates.second,candidates.second * a + b)
-		};
-
-		if (!IsBetween(xy.first.x, start.x, end.x) || !IsBetween(xy.first.y, start.y, end.y)) xy.first = { NAN,NAN };
-		if (!IsBetween(xy.second.x, start.x, end.x) || !IsBetween(xy.second.y, start.y, end.y)) xy.second = { NAN,NAN };
-
-		return xy;
-			
-		
-	}
-	double GetAngle() const {
-		double dy = end.y- start.y;
-		double dx = end.x - start.x;
-		return atan2(dy, dx);
-	}
-	double GetLength() const {
-		return Distance(start, end);
-	}
-	CollisionEdge Rotate(double angle, sf::Vector2f centre) {
-		double s = sin(angle);
-		double c = cos(angle);
-		auto dStart = start - centre;
-		auto dEnd = end - centre;
-		// sin a + b = y cos b + x sin b
-		// cos a + b = x cos b - sin a y
-		sf::Vector2f startprime(dStart.x * c - dStart.y * s, dStart.y * c + dStart.x*s);
-		sf::Vector2f endprime(dEnd.x * c - dEnd.y * s, dEnd.y * c + dEnd.x*s);
-		startprime += centre;
-		endprime += centre;
-		return CollisionEdge(startprime, endprime);
-	}
-	CollisionEdge(sf::Vector2f start, sf::Vector2f end) : start(start), end(end) {
-
-	}
-	CollisionEdge(sf::Vector2f start, double length, double angle) : start(start) {
-		end.x = length * cos(angle);
-		end.y = length * sin(angle);
-		end += start;
-	}
-
-};
 std::vector<CollisionEdge>* ScreenEdges = new std::vector<CollisionEdge>{
-	{{screenBox.left,screenBox.top},{screenBox.left + screenBox.width,screenBox.top}},
-	{{screenBox.left,screenBox.top+screenBox.height},{screenBox.left + screenBox.width,screenBox.top + screenBox.height}}
+	{{ScreenBox.left,ScreenBox.top},{ScreenBox.left + ScreenBox.width,ScreenBox.top}},
+	{{ScreenBox.left,ScreenBox.top + ScreenBox.height},{ScreenBox.left + ScreenBox.width,ScreenBox.top + ScreenBox.height}}
 };
-
+std::vector<CollisionEdge>* MockScreenEdges = new std::vector<CollisionEdge>{
+	{{ScreenBox.left,ScreenBox.top},{ScreenBox.left + ScreenBox.width,ScreenBox.top}},
+	{{ScreenBox.left,ScreenBox.top + ScreenBox.height},{ScreenBox.left + ScreenBox.width,ScreenBox.top + ScreenBox.height}}
+};
 void GetEdges(sf::FloatRect box, std::vector<CollisionEdge>& container) {
 
 	auto getpoint = [&](int i) -> sf::Vector2f {
@@ -152,8 +27,8 @@ void GetEdges(sf::FloatRect box, std::vector<CollisionEdge>& container) {
 		};
 	for (int i = 0; i < 4; i++)
 	{
-		if(container.size() <= i) 
-		container.push_back(CollisionEdge(getpoint(i), getpoint(i + 1)));
+		if (container.size() <= i)
+			container.push_back(CollisionEdge(getpoint(i), getpoint(i + 1)));
 		else {
 			container[i].start = getpoint(i);
 			container[i].end = getpoint(i + 1);
@@ -171,13 +46,19 @@ bool PlayerUp = false;
 bool PlayerDown = false;
 sf::RectangleShape compass;
 
-bool started = false;
+bool running = false;
 int framesPassed = 0;
 
 double magnitude(sf::Vector2f vec) {
 	return sqrt(vec.x * vec.x + vec.y * vec.y);
 }
 using EdgeSet = std::vector<const std::vector<CollisionEdge>*>;
+class Entity;
+struct UpdateData {
+	std::vector<Entity*>* entities;
+	const EdgeSet* collisionEdges;
+	int Segments;
+};
 class  Entity
 {
 public:
@@ -188,8 +69,7 @@ public:
 	virtual void PreUpdate() {
 
 	}
-	virtual void Update(std::vector<Entity*>& entities,const EdgeSet& collisionEdges) {
-
+	virtual void Update(UpdateData data) {
 	}
 	virtual void UpdateEdges() {
 	}
@@ -197,65 +77,72 @@ public:
 	Entity() {
 	}
 	virtual ~Entity() {
-
+		if (edges) delete edges;
 	};
-
+	virtual Entity* Mock() = 0;
 private:
 
 };
 
 
-class Ball : public Entity{
+class Ball : public Entity {
 	sf::CircleShape shape;
 public:
 	double radius;
 	void PreUpdate() override {
 	}
-	void Update(std::vector<Entity*>& entities, const EdgeSet& collisionEdges) override {
-		if (position.x > screenBox.left + screenBox.width) {
+	void Update(UpdateData data) override {
+		auto centre = position + sf::Vector2f(radius, radius);
+		if (position.x > ScreenBox.left + ScreenBox.width) {
 
-			if (!leaderboard.contains(difficulty)) {
-				leaderboard.insert({ difficulty, framesPassed });
+			if (!leaderboard.contains(Difficulty::Current)) {
+				leaderboard.insert({ Difficulty::Current, framesPassed });
 
 			}
 			else {
-				leaderboard[difficulty] = std::min<long long>(framesPassed, leaderboard[difficulty]);
+				leaderboard[Difficulty::Current] = std::min<long long>(framesPassed, leaderboard[Difficulty::Current]);
 			}
 			Reset();
 			framesPassed = 0;
-			difficulty++;
-	
+			Difficulty::Current++;
 			return;
 		}
-		if (position.x < screenBox.left) {
+		if (position.x < ScreenBox.left) {
 			Reset();
 			return;
 		}
-		for (auto& set : collisionEdges)
+		for (auto& set : *data.collisionEdges)
 		{
 			if (set == nullptr) continue;
 			for (auto& i : *set)
 			{
+				if (Distance(i.start, centre) <= radius || Distance(i.end, centre) <= radius) {
 
-				double d = i.distance(this->position + sf::Vector2f(radius, radius));
+					position -= velocity * (1.f / data.Segments);
+					velocity = -velocity;
+					return;
+
+				}
+				double d = i.distance(centre);
 				if (d > radius) {
-					i.colliding = false;
 					continue;
 				}
-				auto H = i.ClosestPoint(this->position + sf::Vector2f(radius, radius));
-				if (isfinite(H.x) && isfinite(H.y)) {
+				auto H = i.CollisionPoints(centre, radius);
+				if ((isfinite(H.first.x) && isfinite(H.first.y)) || (isfinite(H.second.x) && isfinite(H.second.y))) {
 
-					if (i.colliding == false) {
-						double thisAngle = atan2(velocity.y, velocity.x);
-						double edgeAngle = i.GetAngle();
-						
-						double v = magnitude(velocity);
-						double finalAngle = 2 * edgeAngle - thisAngle;
-						velocity = sf::Vector2f(v * cos(finalAngle), v * sin(finalAngle));
-					}
-					i.colliding = true;
+
+					double thisAngle = atan2(velocity.y, velocity.x);
+					double edgeAngle = i.GetAngle();
+					double dTheta = thisAngle - edgeAngle;
+					
+					
+					double v = magnitude(velocity);
+					double finalAngle = 2 * edgeAngle - thisAngle;
+					position -= velocity;
+					velocity = sf::Vector2f(v * cos(finalAngle), v * sin(finalAngle));
+					return;
 				}
-				else i.colliding = false;
+				
 			}
 		}
 	}
@@ -279,9 +166,9 @@ public:
 		else if (PlayerDown) velocity = { 0,PlayerSpeed };
 		else velocity = { 0 , 0 };
 	}
-	void Update(std::vector<Entity*>& entities, const EdgeSet& collisionEdges) override {
-		
-		position.y = std::clamp(position.y, screenBox.top, screenBox.top + screenBox.height - shape.getSize().y);
+	void Update(UpdateData data) override {
+
+		position.y = std::clamp(position.y, ScreenBox.top, ScreenBox.top + ScreenBox.height - shape.getSize().y);
 
 	}
 	void Draw(sf::RenderTarget& target) {
@@ -289,7 +176,7 @@ public:
 		shape.setSize(size);
 		target.draw(shape);
 	}
-	void UpdateEdges() override{
+	void UpdateEdges() override {
 		GetEdges({ position,size }, *edges);
 	}
 	Player() {
@@ -309,8 +196,8 @@ public:
 		else if (OpponentDown) velocity = { 0,(float)OpponentSpeed() };
 		else velocity = { 0 , 0 };
 	}
-	void Update(std::vector<Entity*>& entities, const EdgeSet& collisionEdges) override {
-		position.y = std::clamp(position.y, screenBox.top, screenBox.top + screenBox.height - shape.getSize().y);
+	void Update(UpdateData data) override {
+		position.y = std::clamp(position.y, ScreenBox.top, ScreenBox.top + ScreenBox.height - shape.getSize().y);
 	}
 	void Draw(sf::RenderTarget& target) override {
 		shape.setPosition(position);
@@ -327,41 +214,190 @@ public:
 		edges = new std::vector<CollisionEdge>;
 	}
 };
+class Wall : public Entity {
+	sf::VertexArray vertices;
+public:
+	void PreUpdate() override {
+		ManageOpponent();
+		if (OpponentUp) velocity = { 0,(float)-OpponentSpeed() };
+		else if (OpponentDown) velocity = { 0,(float)OpponentSpeed() };
+		else velocity = { 0 , 0 };
+	}
+	void Update(UpdateData data) override {
+		//position.y = std::clamp(position.y, screenBox.top, screenBox.top + screenBox.height - shape.getSize().y);
+	}
+	void Draw(sf::RenderTarget& target) override {
+		target.draw(vertices);
+	}
+	void UpdateEdges() override {
+		//GetEdges({ position,size }, *edges);
+	}
+	Wall(std::initializer_list<sf::Vector2f> vertices, sf::Color color) {
+
+		this->vertices.setPrimitiveType(sf::LineStrip);
+		edges = new std::vector<CollisionEdge>;
+		for (auto iter = vertices.begin(); iter != vertices.end(); iter++)
+		{
+			this->vertices.append(sf::Vertex(*iter, color));
+			if (iter + 1 != vertices.end()) {
+				edges->push_back({ *iter,*(iter + 1) });
+			}
+		}
+	}
+};
+class Vortex : public Entity {
+protected:
+	sf::VertexArray vertices;
+	double radius;
+	sf::Vector2f centre;
+	std::vector<sf::Vector2f> segments;
+	double theta = 0;
+	friend class MockVortex;
+public:
+	
+	void PreUpdate() override {
+
+	}
+	void Update(UpdateData data) override {
+		theta += VortexAngularVelocity / data.Segments;
+		//position.y = std::clamp(position.y, screenBox.top, screenBox.top + screenBox.height - shape.getSize().y);
+	}
+	void Draw(sf::RenderTarget& target) override {
+		for (auto& i : segments)
+		{
+			vertices[0].position = centre + sf::Vector2f(cos(theta + i.x) * radius, sin(theta + i.x) * radius);
+			vertices[1].position = centre + sf::Vector2f(cos(theta + i.y) * radius, sin(theta + i.y) * radius);
+			target.draw(vertices);
+		}
+	}
+	void UpdateEdges() override {
+		for (size_t i = 0; i < segments.size(); i++)
+		{
+			auto& edge = edges->at(i);
+			edge.start = centre + sf::Vector2f(cos(theta + segments[i].x) * radius, sin(theta + segments[i].x) * radius);
+			edge.end = centre + sf::Vector2f(cos(theta + segments[i].y) * radius, sin(theta + segments[i].y) * radius);
+		}
+	}
+	Vortex(sf::Vector2f centre, double radius, std::initializer_list<sf::Vector2f> segments, sf::Color color)
+		: centre(centre), radius(radius), segments(segments) {
+
+		this->vertices.setPrimitiveType(sf::LineStrip);
+		edges = new std::vector<CollisionEdge>;
+		edges->resize(segments.size());
+		vertices.resize(2);
+		vertices[0].color = color;
+		vertices[1].color = color;
+	}
+
+};
+class MockVortex : public Entity {
+	double radius = 0;
+	sf::Vector2f centre;
+	std::vector<sf::Vector2f> segments;
+	double theta = 0;
+public:
+	void PreUpdate() override {
+
+	}
+	void Update(UpdateData data) override {
+		theta += VortexAngularVelocity / data.Segments;
+		//position.y = std::clamp(position.y, screenBox.top, screenBox.top + screenBox.height - shape.getSize().y);
+	}
+	void Draw(sf::RenderTarget& target) override {
+	}
+	void UpdateEdges() override {
+		for (size_t i = 0; i < segments.size(); i++)
+		{
+			auto& edge = edges->at(i);
+			edge.start = centre + sf::Vector2f(cos(theta + segments[i].x) * radius, sin(theta + segments[i].x) * radius);
+			edge.end = centre + sf::Vector2f(cos(theta + segments[i].y) * radius, sin(theta + segments[i].y) * radius);
+		}
+	}
+	void Reset(Vortex* vortex) {
+
+		 radius = vortex->radius;
+		 centre = vortex->centre;
+		 segments = vortex->segments;
+		 theta = vortex->theta;
+		 *edges = *vortex->edges;
+	}
+	MockVortex() {	
+		edges = new std::vector<CollisionEdge>;
+	}
+};
 class Mockball : public Entity {
 public:
 	double radius;
-	Mockball(Ball* original) {
+	Mockball() {
+	}
+	void Reset(Ball* original) {
 		radius = original->radius;
 		position = original->position;
 		acceleration = original->acceleration;
 		velocity = original->velocity;
 	}
-	void Draw(sf::RenderTarget& target) {
+	void Update(UpdateData data) override {
+		bool coll = false;
+		for (auto& set : *data.collisionEdges)
+		{
+			if (set == nullptr) continue;
+
+			for (auto& i : *set)
+			{
+
+				double d = i.distance(this->position + sf::Vector2f(radius, radius));
+				if (d > radius) {
+					i.colliding = false;
+					continue;
+				}
+
+				auto H = i.ClosestPoint(this->position + sf::Vector2f(radius, radius));
+				if (isfinite(H.x) && isfinite(H.y)) {
+
+					if (i.colliding == false) {
+						double thisAngle = atan2(velocity.y, velocity.x);
+						double edgeAngle = i.GetAngle();
+
+						double v = magnitude(velocity);
+						double finalAngle = 2 * edgeAngle - thisAngle;
+						velocity = sf::Vector2f(v * cos(finalAngle), v * sin(finalAngle));
+					}
+					i.colliding = true;
+				}
+				else i.colliding = false;
+			}
+		}
+	}
+	void Draw(sf::RenderTarget& target) override {
 	}
 };
 class MockPlayer : public Entity {
-	bool up;
-	bool down;
+	bool up = false;
+	bool down = false;
 public:
 	sf::Vector2f size;
 	void PreUpdate() override {
-		if (difficulty <= 0) {
+		if (Difficulty::Current < Difficulty::PlayerTracking) {
 			velocity = { 0,0 };
 			return;
 		}
 		if (up) velocity = { 0,-PlayerSpeed };
 		if (down) velocity = { 0,PlayerSpeed };
 	}
-	void Update(std::vector<Entity*>& entities, const EdgeSet& collisionEdges) override {
-		position.y = std::clamp<float>(position.y, screenBox.top, screenBox.top + screenBox.height - size.y);
+	void Update(UpdateData data) override {
+		position.y = std::clamp<float>(position.y, ScreenBox.top, ScreenBox.top + ScreenBox.height - size.y);
 	}
 	void Draw(sf::RenderTarget& target) {
 	}
 	void UpdateEdges() override {
-		
+
 		GetEdges({ position,size }, *edges);
 	}
-	MockPlayer(Player* original,bool up,bool down) : up(up),down(down) {
+	MockPlayer() {
+	}
+	void Reset(Player* original, bool up, bool down) {
+		this->up = up;
+		this->down = down;
 		size = original->size;
 		position = original->position;
 		acceleration = original->acceleration;
@@ -373,30 +409,37 @@ Ball* ball = new Ball;
 Opponent* opponent = new Opponent;
 Player* player = new Player;
 
-std::vector<Entity*> entities = { ball,opponent,player };
-
-EdgeSet collisionEdges = {
-	entities[0]->edges,entities[1]->edges,entities[2]->edges,ScreenEdges
+std::vector<Entity*> entities = { ball,opponent,player,
+	new Vortex(ScreenCenter(),100,
+		{
+			{0,3.14 / 3}, {2. / 3 * 3.14,3. / 3 * 3.14},{4. / 3 * 3.14,5. / 3 * 3.14}
+},sf::Color::White)
 };
 
+EdgeSet collisionEdges = {
+	entities[0]->edges,entities[1]->edges,entities[2]->edges,entities[3]->edges, ScreenEdges,
+};
+std::vector<CollisionEdge>* playerWall = new std::vector<CollisionEdge>{
+	{{ScreenBox.left + 75,ScreenBox.top},{ScreenBox.left + 75,ScreenBox.top + ScreenBox.height}}
+};
 void Reset() {
-	opponent->position = { 
-		screenBox.left + screenBox.width - 50 - opponent->size.x,
-		screenBox.top + screenBox.height / 2 - opponent->size.y / 2 
+	opponent->position = {
+		ScreenBox.left + ScreenBox.width - 50 - opponent->size.x,
+		ScreenBox.top + ScreenBox.height / 2 - opponent->size.y / 2
 	};
 	ball->position = sf::Vector2f(
-		screenBox.left + screenBox.width / 2 - ball->radius,
-		screenBox.top + screenBox.height / 2 - ball->radius
+		ScreenBox.left + ScreenBox.width / 2 - ball->radius,
+		ScreenBox.top + ScreenBox.height / 2 - ball->radius
 	);
-	player->size = sf::Vector2f( 25,150 + std::max(0,5 * (5 - difficulty)) );
-	player->position = { screenBox.left + 50, 250 - player->size.y / 2 };
+	player->size = sf::Vector2f(25, PlayerHeight());
+	player->position = { ScreenBox.left + 50, 250 - player->size.y / 2 };
 	ball->velocity = { 0,0 };
 	ball->acceleration = { 0,0 };
-	started = false;
+	running = false;
 }
 
-void Tick(std::vector<Entity*>& entities,EdgeSet& collisionEdges) {
-	
+void Tick(std::vector<Entity*>& entities, EdgeSet& collisionEdges) {
+
 	std::vector<double > magnitudes;
 	for (auto i : entities)
 	{
@@ -404,10 +447,10 @@ void Tick(std::vector<Entity*>& entities,EdgeSet& collisionEdges) {
 		magnitudes.push_back(magnitude(i->velocity));
 		magnitudes.push_back(magnitude(i->acceleration));
 	}
-	double maxlength = *std::max_element(magnitudes.begin(),magnitudes.end());	
-	int times = std::max(1., ceil(maxlength / 10));
+	double maxlength = *std::max_element(magnitudes.begin(), magnitudes.end());
+	int times = std::max(1., ceil(maxlength / Engine::SegmentLength));
 	int n = 0;
-	while(n++ < times) {
+	while (n++ < times) {
 
 		for (auto i : entities)
 		{
@@ -420,40 +463,48 @@ void Tick(std::vector<Entity*>& entities,EdgeSet& collisionEdges) {
 		}
 		for (auto i : entities)
 		{
-			i->Update(entities,collisionEdges);
-		}	
+			i->Update({ &entities, &collisionEdges,times });
+		}
 	}
-	
 }
-std::vector<CollisionEdge>* playerWall = new std::vector<CollisionEdge>{
-	{{screenBox.left + 75,screenBox.top},{screenBox.left + 75,screenBox.top + screenBox.height}}
-};
 sf::Vector2f PredictTrajectory() {
 	int ticks = 0;
-	bool playerUp = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
-	bool playerDown = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
-	double GravityAngle = ::GravityAngle;
-	auto Gravity = ::Gravity;
-	bool gravityLeft = sf::Keyboard::isKeyPressed(sf::Keyboard::Left);
-	bool gravityRight = sf::Keyboard::isKeyPressed(sf::Keyboard::Right);
-	std::vector<Entity*> entities = { new Mockball(ball),new MockPlayer(player,playerUp,playerDown) };
+	double GravityAngle = Gravity::Angle();
+	auto Gravity = ::Gravity::Vector();
+	bool gravityLeft = sf::Keyboard::isKeyPressed(Controls::Gravity_CounterClockwise);
+	bool gravityRight = sf::Keyboard::isKeyPressed(Controls::Gravity_Clockwise);
+	static Mockball* ball = new Mockball;
+	static MockPlayer* player = new MockPlayer;
+	static MockVortex* vortex = new MockVortex;
+	player->Reset(::player, PlayerUp, PlayerDown);
+	ball->Reset(::ball);
+
+	static std::vector<Entity*> entities = { ball,player,vortex};
 	EdgeSet collisionEdges = {
-	(difficulty > 4) ? entities[1]->edges : nullptr,
-	(difficulty > 3) ? ScreenEdges : nullptr,
-	(difficulty > 7) ? playerWall : nullptr
+	(Difficulty::Current >= Difficulty::PlayerCollisions) ? player->edges : nullptr,
+	(Difficulty::Current >= Difficulty::BorderCollisions) ? MockScreenEdges : nullptr,
+	(Difficulty::Current >= Difficulty::PlayerWall) ? playerWall : nullptr,
+	(Difficulty::Current >= Difficulty::VortexTracking)? vortex->edges : nullptr
 	};
-	auto ball = (Mockball*)entities[0];
+	vortex->Reset((Vortex*)::entities[3]);
+	for (auto i : collisionEdges)
+	{
+		if (i == nullptr) continue;
+		for (auto& j : *i) {
+			j.colliding = false;
+		}
+	}
 	while (ball->position.x + 2 * ball->radius < opponent->position.x) {
 
-		if (ticks > 1000) break;
-		if (difficulty > 6 && controlMode == ControlMode::Keyboard) {
+		if (ticks > PredictionTicks) break;
+		if (Difficulty::Current >= Difficulty::GravityTracking && Controls::Gravity_Mode == Controls::ControlMode::Keyboard) {
 			if (gravityLeft) {
-				GravityAngle += GravityRateOfChange;
-				Gravity = { float(cos(GravityAngle) * GravityMagnitude),float(-sin(GravityAngle) * GravityMagnitude) };
+				GravityAngle += Gravity::RateOfChange;
+				Gravity = sf::Vector2f(cos(GravityAngle) * Gravity::Magnitude, -sin(GravityAngle) * Gravity::Magnitude);
 			}
 			if (gravityRight) {
-				GravityAngle -= GravityRateOfChange;
-				Gravity = { float(cos(GravityAngle) * GravityMagnitude),float(-sin(GravityAngle) * GravityMagnitude) };
+				GravityAngle -= Gravity::RateOfChange;
+				Gravity = sf::Vector2f(cos(GravityAngle) * Gravity::Magnitude, -sin(GravityAngle) * Gravity::Magnitude);
 
 			}
 		}
@@ -462,21 +513,18 @@ sf::Vector2f PredictTrajectory() {
 		ticks++;
 	}
 	auto pos = ball->position;
-	for (auto& i : entities)
-	{
-		delete i;
-	}
+	if (ticks > PredictionTicks && Difficulty::Current >= Difficulty::Fallback) return { 0, ScreenBox.top + ScreenBox.height / 2 };
 	return pos;
 }
 
 void ManageOpponent() {
 	OpponentUp = false;
 	OpponentDown = false;
-	auto ballPos = (difficulty > 2) ? PredictTrajectory() : ball->position;
+	auto ballPos = (Difficulty::Current >= Difficulty::Prediction) ? PredictTrajectory() : ball->position;
 	auto opponentPos = opponent->position;
 	opponentPos.y += opponent->size.y / 2;
-	if (ballPos.y < opponentPos.y + OpponentSpeed()) OpponentUp = true;
-	if (ballPos.y > opponentPos.y - OpponentSpeed()) OpponentDown = true;
+	if (ballPos.y < opponentPos.y - OpponentSpeed()) OpponentUp = true;
+	if (ballPos.y > opponentPos.y + OpponentSpeed()) OpponentDown = true;
 }
 
 
@@ -491,8 +539,8 @@ std::string TimeFormat(long long seconds) {
 	if (sstr.length() < 2) sstr = "0" + sstr;
 	if (mstr.length() < 2) mstr = "0" + mstr;
 	if (hstr.length() < 2) hstr = "0" + hstr;
-	
-	
+
+
 	std::string result;
 	if (h) {
 		result += hstr + ":";
@@ -503,6 +551,7 @@ std::string TimeFormat(long long seconds) {
 
 void DrawGame(sf::RenderTarget& target) {
 	target.clear();
+	compass.setOrigin({ 0,compass.getSize().y / 2 });
 	for (auto& i : entities)
 	{
 		i->Draw(target);
@@ -510,38 +559,67 @@ void DrawGame(sf::RenderTarget& target) {
 	target.draw(compass);
 	sf::RectangleShape line({ 5.f,float(target.getSize().y) });
 	line.setFillColor(sf::Color::Magenta);
-	line.setPosition(screenBox.left - line.getSize().x, 0);
+	line.setPosition(ScreenBox.left - line.getSize().x, 0);
 	target.draw(line);
-	draw_text(false, false, 10, 10, "Difficulty:", target, font_texture, 22);
-	draw_text(false, false, 10, 32, std::to_string(difficulty), target, font_texture, 22);
-	draw_text(false, false, 10, 54, "Time: ", target, font_texture, 22);
-	long long ff = (long long)framesPassed / 60;
-	draw_text(false, false, 10, 76, TimeFormat(ff), target, font_texture, 22);
-	int y = 98;
+	
+	sf::CircleShape compassCore;
+	compassCore.setFillColor(sf::Color::Red);
+	compassCore.setRadius(5);
+	compassCore.setPosition(compass.getPosition() - sf::Vector2f(5, 5));
+	target.draw(compassCore);
+	if constexpr (DrawEdges) {
+		sf::CircleShape vertexpointer;
+		vertexpointer.setFillColor(sf::Color::Blue);
+		vertexpointer.setRadius(3);
+
+		sf::Vertex z[2]{};
+		z[0].color = z[1].color = sf::Color::Blue;
+		for (auto set : collisionEdges)
+		{
+			if (set == nullptr) continue;
+			for (auto& i : *set) {
+
+				vertexpointer.setPosition(i.start + sf::Vector2f(-3, -3));
+				target.draw(vertexpointer);
+				vertexpointer.setPosition(i.end + sf::Vector2f(-3, -3));
+				target.draw(vertexpointer);
+				z[0].position = i.start;
+				z[1].position = i.end;
+				target.draw(z, 2, sf::LineStrip);
+			}
+		}
+	}
+	auto text = "Difficulty: \n"
+		+ std::to_string(Difficulty::Current) + "\n"
+		+ "Time: \n"
+		+ TimeFormat(framesPassed / FPS) + "\n";
+
+	draw_text(false, false, 10, 10, text, target, font_texture, 22);
 	for (auto& i : leaderboard)
 	{
-		draw_text(false, false, 10, y, 
+		/*draw_text(false, false, 10, y,
 			"Level " + std::to_string(i.first) + " : " + TimeFormat(i.second / 60),
 			target,
 			font_texture,
-			16);
+			16);*/
 
-		y += 16;
+			//y += 16;
 	}
 }
-
-int main() {
+void ShootBall() {
+	/*double velocity = 10;
 	
-	sf::RenderWindow window(sf::VideoMode(screenBox.left + screenBox.width, screenBox.top + screenBox.height), "Ping Pong");
+	ball->velocity = sf::Vector2f( velocity * cos(Gravity::Angle()), velocity * sin(Gravity::Angle()) );*/
+}
+int main() {
+
+	sf::RenderWindow window(sf::VideoMode(ScreenBox.left + ScreenBox.width, ScreenBox.top + ScreenBox.height), "Ping Pong");
 	std::chrono::steady_clock clock;
 	auto lasttime = clock.now();
-	
-	compass.setSize({ 50,5 });
-	compass.setFillColor(sf::Color::Red);
-	compass.setPosition(screenBox.getPosition() + (0.5f * screenBox.getSize()));
+	compass.setSize(Compass::Size);
+	compass.setFillColor(Compass::Color);
+	compass.setPosition(ScreenBox.getPosition() + (0.5f * ScreenBox.getSize()));
 	Reset();
-
-
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -551,46 +629,63 @@ int main() {
 			case sf::Event::Closed:
 				window.close();
 				return 0;
+			case sf::Event::KeyReleased:
+				if (event.key.code == sf::Keyboard::Space) {
+					if (running) {
+						Reset();
+					}
+					else {
+
+						running = true;
+						ShootBall();
+					}
+				}
+			case sf::Event::MouseWheelScrolled:
+				if (Controls::Player_Mode == Controls::ControlMode::Scroll) {
+					player->position.y += event.mouseWheelScroll.delta * Controls::Player_Scroll_Sensitivity;
+				}
+				if (Controls::Gravity_Mode == Controls::ControlMode::Scroll) {
+					Gravity::SetAngle(Gravity::Angle() + event.mouseWheelScroll.delta * Controls::Gravity_Scroll_Sensitivity);
+					ball->acceleration = Gravity::Vector();
+				}
+				break;
 			default:
 				break;
 			}
+			
 
-		}
-		if (!started && sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-			started = true;
-		}
-		if (controlMode == ControlMode::Keyboard) {
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-				GravityAngle += GravityRateOfChange;
-				Gravity = { float(cos(GravityAngle) * GravityMagnitude),float(-sin(GravityAngle) * GravityMagnitude) };
-				ball->acceleration = Gravity;
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-				GravityAngle -= GravityRateOfChange;
-				Gravity = { float(cos(GravityAngle) * GravityMagnitude),float(-sin(GravityAngle) * GravityMagnitude) };
-				ball->acceleration = Gravity;
-			}
+		}	
+		if (Controls::Gravity_Mode == Controls::ControlMode::Keyboard) {
+			if (sf::Keyboard::isKeyPressed(Controls::Gravity_CounterClockwise)) Gravity::SetAngle(Gravity::Angle() + Gravity::RateOfChange);
+			if (sf::Keyboard::isKeyPressed(Controls::Gravity_Clockwise)) Gravity::SetAngle(Gravity::Angle() - Gravity::RateOfChange);
+			ball->acceleration = Gravity::Vector();
 		}
 		else {
-			auto position = sf::Mouse::getPosition(window);
-			sf::Vector2f positionF(position.x, position.y);
-			//std::cout << positionF.x << "   " << positionF.y << std::endl;
-			sf::Vector2f center = compass.getPosition();// { screenBox.left + screenBox.width, screenBox.top + screenBox.height / 2 };
-			auto delta = positionF - center;
-			delta.y *= -1;
-			GravityAngle = atan2(delta.y, delta.x);
-			Gravity = { float(cos(GravityAngle) * GravityMagnitude),float(-sin(GravityAngle) * GravityMagnitude) };
-			ball->acceleration = Gravity;
+			auto coords = sf::Mouse::getPosition(window);
+
+			auto position = window.mapPixelToCoords(coords);
+			if (Controls::Gravity_Mode == Controls::ControlMode::Mouse) {
+				
+				//std::cout << positionF.x << "   " << positionF.y << std::endl;
+				sf::Vector2f center = compass.getPosition();// { screenBox.left + screenBox.width, screenBox.top + screenBox.height / 2 };
+				auto delta = position - center;
+				delta.y *= -1;
+				Gravity::SetAngle(atan2(delta.y, delta.x));
+				ball->acceleration = Gravity::Vector();
+			}
+			if (Controls::Player_Mode == Controls::ControlMode::Mouse) {
+				player->position.y = position.y - player->size.y/2;
+			}
 		}
 
 		auto thisTime = clock.now();
 		auto duration = thisTime - lasttime;
 		if (duration.count() >= FrameDuration * 1000000) {
 			lasttime = thisTime;
-			compass.setRotation(-GravityAngle * 180 / 3.14);
-			PlayerUp = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
-			PlayerDown = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
-			if(started) Tick(entities,collisionEdges);
+			compass.setRotation(-Gravity::Angle() * 180 / 3.14);
+			PlayerUp = sf::Keyboard::isKeyPressed(sf::Keyboard::LBracket);
+			PlayerDown = sf::Keyboard::isKeyPressed(sf::Keyboard::Quote);
+			if (running) Tick(entities, collisionEdges);
 			framesPassed++;
 		}
 		DrawGame(window);

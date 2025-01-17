@@ -1,7 +1,0 @@
-Package: sfml
-Feature: audio
-Depends: libflac, libogg, libvorbis, openal-soft
-Architecture: x64-windows
-Multi-Arch: same
-Description: Use sfml-audio library
-Status: install ok installed

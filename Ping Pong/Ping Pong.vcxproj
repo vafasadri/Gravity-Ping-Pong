@@ -108,6 +108,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,11 +135,16 @@
     <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CollisionEdge.cpp" />
+    <ClCompile Include="Entities.cpp" />
     <ClCompile Include="Experiments.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CollisionEdge.hpp" />
+    <ClInclude Include="Entities.hpp" />
+    <ClInclude Include="Global.hpp" />
     <ClInclude Include="Settings.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -53,6 +53,7 @@ void draw_text(const bool i_center_x, const bool i_center_y, const short i_x, co
 
 			i_window.draw(character_sprite);
 		}
+		character_y += i_font_size;
 	}
 }
 extern auto font_texture = get_texture("Font.png");

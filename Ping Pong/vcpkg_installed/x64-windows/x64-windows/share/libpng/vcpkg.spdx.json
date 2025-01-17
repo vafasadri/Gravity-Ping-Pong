@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/libpng-x64-windows-1.6.44-2d3dc78f-786e-4b69-be22-effd0e26a712",
-  "name": "libpng:x64-windows@1.6.44 ed8dd35854a5ce793789fbe003c7b1af3c6a974ebcb92cdc371355e61086982e",
+  "documentNamespace": "https://spdx.org/spdxdocs/libpng-x64-windows-1.6.45-8715d6eb-ef29-41f4-8b22-3d761a7dbd6c",
+  "name": "libpng:x64-windows@1.6.45 702c43e5d7b874a602e193c101d66d11a065a65252b7074610bd3c9cedde9253",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+      "Tool: vcpkg-2025-01-11-0f310537c75015100d200eb71b137f6376aad510"
     ],
-    "created": "2024-12-22T19:15:51Z"
+    "created": "2025-01-17T11:38:26Z"
   },
   "relationships": [
     {
@@ -48,26 +48,6 @@
       "relatedSpdxElement": "SPDXRef-file-5"
     },
     {
-      "spdxElementId": "SPDXRef-port",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-file-6"
-    },
-    {
-      "spdxElementId": "SPDXRef-port",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-file-7"
-    },
-    {
-      "spdxElementId": "SPDXRef-port",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-file-8"
-    },
-    {
-      "spdxElementId": "SPDXRef-port",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-file-9"
-    },
-    {
       "spdxElementId": "SPDXRef-binary",
       "relationshipType": "GENERATED_FROM",
       "relatedSpdxElement": "SPDXRef-port"
@@ -101,35 +81,15 @@
       "spdxElementId": "SPDXRef-file-5",
       "relationshipType": "CONTAINED_BY",
       "relatedSpdxElement": "SPDXRef-port"
-    },
-    {
-      "spdxElementId": "SPDXRef-file-6",
-      "relationshipType": "CONTAINED_BY",
-      "relatedSpdxElement": "SPDXRef-port"
-    },
-    {
-      "spdxElementId": "SPDXRef-file-7",
-      "relationshipType": "CONTAINED_BY",
-      "relatedSpdxElement": "SPDXRef-port"
-    },
-    {
-      "spdxElementId": "SPDXRef-file-8",
-      "relationshipType": "CONTAINED_BY",
-      "relatedSpdxElement": "SPDXRef-port"
-    },
-    {
-      "spdxElementId": "SPDXRef-file-9",
-      "relationshipType": "CONTAINED_BY",
-      "relatedSpdxElement": "SPDXRef-port"
     }
   ],
   "packages": [
     {
       "name": "libpng",
       "SPDXID": "SPDXRef-port",
-      "versionInfo": "1.6.44",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/libpng",
-      "homepage": "https://github.com/glennrp/libpng",
+      "versionInfo": "1.6.45",
+      "downloadLocation": "NOASSERTION",
+      "homepage": "https://github.com/pnggroup/libpng",
       "licenseConcluded": "libpng-2.0",
       "licenseDeclared": "NOASSERTION",
       "copyrightText": "NOASSERTION",
@@ -139,7 +99,7 @@
     {
       "name": "libpng:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "ed8dd35854a5ce793789fbe003c7b1af3c6a974ebcb92cdc371355e61086982e",
+      "versionInfo": "702c43e5d7b874a602e193c101d66d11a065a65252b7074610bd3c9cedde9253",
       "downloadLocation": "NONE",
       "licenseConcluded": "libpng-2.0",
       "licenseDeclared": "NOASSERTION",
@@ -148,15 +108,15 @@
     },
     {
       "SPDXID": "SPDXRef-resource-0",
-      "name": "glennrp/libpng",
-      "downloadLocation": "git+https://github.com/glennrp/libpng@v1.6.44",
+      "name": "pnggroup/libpng",
+      "downloadLocation": "git+https://github.com/pnggroup/libpng@v1.6.45",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
       "copyrightText": "NOASSERTION",
       "checksums": [
         {
           "algorithm": "SHA512",
-          "checksumValue": "c023bc7dcf3d0ea045a63204f2266b2c53b601b99d7c5f5a7b547bc9a48b205a277f699eefa47f136483f495175b226527097cd447d6b0fbceb029eb43638f63"
+          "checksumValue": "b999c241ce5d95dfae5bb2c71e8b686a1c4af69b67262bda309a58c83967b5f3eacd7987d6990f71ebc16aa89f4f7a59c846857d56c80bca7e9ec657caff62c7"
         }
       ]
     },
@@ -171,63 +131,27 @@
       "checksums": [
         {
           "algorithm": "SHA512",
-          "checksumValue": "ea89018a02ed171b82af9644ec2ff658c8a288e99b5470c7a3fd142c6fa95bbe19cd34c4fae654bc8783b41c3eb3b2d15b486bda3b0307ec3090e99f34465e20"
+          "checksumValue": "60a0b3072f4d1fddcce79eaa89f461d27c32e4c1a4cf3e6dc30ff1091aeceeb2fbfacf830bdb59bad98e39091fdd47458589411b59f94e2d4fc9c121b0545291"
         }
       ]
     }
   ],
   "files": [
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/cmake.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libpng/cmake.patch",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "7a28556789f7c6b070c782b70f472ad7f668a2565b7f08ac149c16e7fddbdf56"
+          "checksumValue": "adde8deb5db8500448b1e1abae4d58e29c411db01b9057fac7839346f8ee293c"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/fix-msa-support-for-mips.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libpng/libpng-config.cmake",
       "SPDXID": "SPDXRef-file-1",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "06d28b4bd95f51b20ce2e99b741ac282038f1cac8bc2c227071c08455b1f3a37"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/fix-tools-static.patch",
-      "SPDXID": "SPDXRef-file-2",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "e765971e3ae4ab528d4b1bf35ca505320332c2a451b154f1674126e94b3e79bb"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/libm.patch",
-      "SPDXID": "SPDXRef-file-3",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "cc8c2ab1e241a6c951eb46ed59a95aacb8e86c1c2280e0727e06f459bacc570c"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/libpng-config.cmake",
-      "SPDXID": "SPDXRef-file-4",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -238,32 +162,20 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/pkgconfig.patch",
-      "SPDXID": "SPDXRef-file-5",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libpng/portfile.cmake",
+      "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "0477ba7a169a2f4d61b604c1a4b488228eebec608a8c298ad883c43283a3d3df"
+          "checksumValue": "7867127e19891eafb8790eaeb90a69d3aea7df549be5822299d84a1ce8799b40"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/portfile.cmake",
-      "SPDXID": "SPDXRef-file-6",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "b0b8ebd6f023c9ac4592db7746dc07ab6559ea46a1bb66cafa7bee3d343c4241"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/usage",
-      "SPDXID": "SPDXRef-file-7",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libpng/usage",
+      "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -274,8 +186,8 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/vcpkg-cmake-wrapper.cmake",
-      "SPDXID": "SPDXRef-file-8",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libpng/vcpkg-cmake-wrapper.cmake",
+      "SPDXID": "SPDXRef-file-4",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -286,12 +198,12 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/vcpkg.json",
-      "SPDXID": "SPDXRef-file-9",
+      "fileName": "./C:/vcpkg/vcpkg/ports/libpng/vcpkg.json",
+      "SPDXID": "SPDXRef-file-5",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "670e52f72594d9a42ab83c9fd27856f3f3ceae4ecff969e1166265ce93248f72"
+          "checksumValue": "8f1a88ba347914f3070dfac97ebf637b3bb152e1e4f4c054be51dcff78160b33"
         }
       ],
       "licenseConcluded": "NOASSERTION",

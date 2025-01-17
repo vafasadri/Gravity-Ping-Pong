@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/bzip2-x64-windows-1.0.8#6-a0c10381-a640-4d1e-82a0-62891a22b9fb",
-  "name": "bzip2:x64-windows@1.0.8#6 d3caa4ca64db53d5c90e164827f12e75b4e75cba84cf910e0c69bbf53547bfc3",
+  "documentNamespace": "https://spdx.org/spdxdocs/bzip2-x64-windows-1.0.8#6-bd283e46-f385-4798-aabe-f24288a7706e",
+  "name": "bzip2:x64-windows@1.0.8#6 107daeaffd8f9c0aa0d75f16489b0e4f3dd82fe7552e13c66fd0092f67f17e74",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+      "Tool: vcpkg-2025-01-11-0f310537c75015100d200eb71b137f6376aad510"
     ],
-    "created": "2024-12-22T19:15:13Z"
+    "created": "2025-01-17T11:38:36Z"
   },
   "relationships": [
     {
@@ -88,7 +88,7 @@
       "name": "bzip2",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "1.0.8#6",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/bzip2",
+      "downloadLocation": "NOASSERTION",
       "homepage": "https://sourceware.org/bzip2/",
       "licenseConcluded": "bzip2-1.0.6",
       "licenseDeclared": "NOASSERTION",
@@ -99,7 +99,7 @@
     {
       "name": "bzip2:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "d3caa4ca64db53d5c90e164827f12e75b4e75cba84cf910e0c69bbf53547bfc3",
+      "versionInfo": "107daeaffd8f9c0aa0d75f16489b0e4f3dd82fe7552e13c66fd0092f67f17e74",
       "downloadLocation": "NONE",
       "licenseConcluded": "bzip2-1.0.6",
       "licenseDeclared": "NOASSERTION",
@@ -124,7 +124,7 @@
   ],
   "files": [
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/bzip2/bzip2.pc.in",
+      "fileName": "./C:/vcpkg/vcpkg/ports/bzip2/bzip2.pc.in",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
@@ -136,7 +136,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/bzip2/CMakeLists.txt",
+      "fileName": "./C:/vcpkg/vcpkg/ports/bzip2/CMakeLists.txt",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
@@ -148,7 +148,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/bzip2/fix-import-export-macros.patch",
+      "fileName": "./C:/vcpkg/vcpkg/ports/bzip2/fix-import-export-macros.patch",
       "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
@@ -160,7 +160,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/bzip2/portfile.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/bzip2/portfile.cmake",
       "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
@@ -172,7 +172,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/bzip2/usage",
+      "fileName": "./C:/vcpkg/vcpkg/ports/bzip2/usage",
       "SPDXID": "SPDXRef-file-4",
       "checksums": [
         {
@@ -184,7 +184,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/bzip2/vcpkg.json",
+      "fileName": "./C:/vcpkg/vcpkg/ports/bzip2/vcpkg.json",
       "SPDXID": "SPDXRef-file-5",
       "checksums": [
         {

@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/stb-x64-windows-2024-07-29#1-47fffc94-5688-4ead-a86d-b7d2af621761",
-  "name": "stb:x64-windows@2024-07-29#1 b06641418cca147cd80d2f27cb14a82024fcddcd1de9e1ede1cfd0582c9c5b0e",
+  "documentNamespace": "https://spdx.org/spdxdocs/stb-x64-windows-2024-07-29#1-bab752a1-7133-42eb-b710-e4db0532b9e6",
+  "name": "stb:x64-windows@2024-07-29#1 41db1bd3920a8ec7be1625524b8a75d8ae6fbc441b07af729f9b3f6a1e453e40",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+      "Tool: vcpkg-2025-01-11-0f310537c75015100d200eb71b137f6376aad510"
     ],
-    "created": "2024-12-22T19:23:25Z"
+    "created": "2025-01-17T11:38:05Z"
   },
   "relationships": [
     {
@@ -78,7 +78,7 @@
       "name": "stb",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "2024-07-29#1",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/stb",
+      "downloadLocation": "NOASSERTION",
       "homepage": "https://github.com/nothings/stb",
       "licenseConcluded": "MIT OR CC-PDDC",
       "licenseDeclared": "NOASSERTION",
@@ -89,7 +89,7 @@
     {
       "name": "stb:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "b06641418cca147cd80d2f27cb14a82024fcddcd1de9e1ede1cfd0582c9c5b0e",
+      "versionInfo": "41db1bd3920a8ec7be1625524b8a75d8ae6fbc441b07af729f9b3f6a1e453e40",
       "downloadLocation": "NONE",
       "licenseConcluded": "MIT OR CC-PDDC",
       "licenseDeclared": "NOASSERTION",
@@ -113,7 +113,7 @@
   ],
   "files": [
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/stb/FindStb.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/stb/FindStb.cmake",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
@@ -125,7 +125,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/stb/portfile.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/stb/portfile.cmake",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
@@ -137,7 +137,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/stb/usage",
+      "fileName": "./C:/vcpkg/vcpkg/ports/stb/usage",
       "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
@@ -149,7 +149,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/stb/vcpkg-cmake-wrapper.cmake",
+      "fileName": "./C:/vcpkg/vcpkg/ports/stb/vcpkg-cmake-wrapper.cmake",
       "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
@@ -161,7 +161,7 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/stb/vcpkg.json",
+      "fileName": "./C:/vcpkg/vcpkg/ports/stb/vcpkg.json",
       "SPDXID": "SPDXRef-file-4",
       "checksums": [
         {

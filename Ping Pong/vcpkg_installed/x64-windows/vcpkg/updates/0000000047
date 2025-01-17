@@ -1,9 +1,0 @@
-Package: sfml
-Version: 2.6.2
-Depends: vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: 3f1dd5b0b4d556d4b30f9675bcaf1ef59985162cacc107300a22c2ede26fd9bc
-Description: Simple and fast multimedia library
-Default-Features: audio, graphics, network, window
-Status: install ok installed
