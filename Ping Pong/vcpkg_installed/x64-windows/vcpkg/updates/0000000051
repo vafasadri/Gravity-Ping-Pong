@@ -1,0 +1,7 @@
+Package: sfml
+Feature: window
+Depends: opengl
+Architecture: x64-windows
+Multi-Arch: same
+Description: Use sfml-window library
+Status: install ok installed

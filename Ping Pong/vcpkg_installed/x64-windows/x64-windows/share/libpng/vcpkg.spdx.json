@@ -1,0 +1,301 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/libpng-x64-windows-1.6.44-2d3dc78f-786e-4b69-be22-effd0e26a712",
+  "name": "libpng:x64-windows@1.6.44 ed8dd35854a5ce793789fbe003c7b1af3c6a974ebcb92cdc371355e61086982e",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+    ],
+    "created": "2024-12-22T19:15:51Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-3"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-4"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-5"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-6"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-7"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-8"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-9"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-2",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-3",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-4",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-5",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-6",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-7",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-8",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-9",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "libpng",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "1.6.44",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/libpng",
+      "homepage": "https://github.com/glennrp/libpng",
+      "licenseConcluded": "libpng-2.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "libpng is a library implementing an interface for reading and writing PNG (Portable Network Graphics) format files",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "libpng:x64-windows",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "ed8dd35854a5ce793789fbe003c7b1af3c6a974ebcb92cdc371355e61086982e",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "libpng-2.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-0",
+      "name": "glennrp/libpng",
+      "downloadLocation": "git+https://github.com/glennrp/libpng@v1.6.44",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "c023bc7dcf3d0ea045a63204f2266b2c53b601b99d7c5f5a7b547bc9a48b205a277f699eefa47f136483f495175b226527097cd447d6b0fbceb029eb43638f63"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "${LIBPNG_APNG_PATCH_NAME}.gz",
+      "packageFileName": "${LIBPNG_APNG_PATCH_NAME}.gz",
+      "downloadLocation": "https://downloads.sourceforge.net/project/libpng-apng/libpng16/${VERSION}/${LIBPNG_APNG_PATCH_NAME}.gz",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "ea89018a02ed171b82af9644ec2ff658c8a288e99b5470c7a3fd142c6fa95bbe19cd34c4fae654bc8783b41c3eb3b2d15b486bda3b0307ec3090e99f34465e20"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/cmake.patch",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7a28556789f7c6b070c782b70f472ad7f668a2565b7f08ac149c16e7fddbdf56"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/fix-msa-support-for-mips.patch",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "06d28b4bd95f51b20ce2e99b741ac282038f1cac8bc2c227071c08455b1f3a37"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/fix-tools-static.patch",
+      "SPDXID": "SPDXRef-file-2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e765971e3ae4ab528d4b1bf35ca505320332c2a451b154f1674126e94b3e79bb"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/libm.patch",
+      "SPDXID": "SPDXRef-file-3",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "cc8c2ab1e241a6c951eb46ed59a95aacb8e86c1c2280e0727e06f459bacc570c"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/libpng-config.cmake",
+      "SPDXID": "SPDXRef-file-4",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "24086e8ff194402a0f2d68e9f992ca7a6899a194883a9df0054818e42d41c246"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/pkgconfig.patch",
+      "SPDXID": "SPDXRef-file-5",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0477ba7a169a2f4d61b604c1a4b488228eebec608a8c298ad883c43283a3d3df"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/portfile.cmake",
+      "SPDXID": "SPDXRef-file-6",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b0b8ebd6f023c9ac4592db7746dc07ab6559ea46a1bb66cafa7bee3d343c4241"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/usage",
+      "SPDXID": "SPDXRef-file-7",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6fd48b8b809e924a7d632e656853c67b391b9dcfbb0e27e867254ae0755e363e"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/vcpkg-cmake-wrapper.cmake",
+      "SPDXID": "SPDXRef-file-8",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4267e69abf185f2228a4cc012e3fe87d5de21a187c75950b5a7615f41c3f6371"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/libpng/vcpkg.json",
+      "SPDXID": "SPDXRef-file-9",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "670e52f72594d9a42ab83c9fd27856f3f3ceae4ecff969e1166265ce93248f72"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

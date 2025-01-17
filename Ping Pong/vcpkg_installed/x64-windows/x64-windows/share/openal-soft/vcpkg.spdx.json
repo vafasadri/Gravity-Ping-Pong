@@ -1,0 +1,132 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/openal-soft-x64-windows-1.24.1-5b41c654-e14e-4eed-8633-360421d86b2b",
+  "name": "openal-soft:x64-windows@1.24.1 32d730a66beb4897a21e854f426e0345cae6345e08c61139dfaea83bf0c064f5",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-2024-12-09-1005b78fa1bf1dde1a20c2734cba4ea61ca94d9a"
+    ],
+    "created": "2024-12-22T19:19:50Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-2",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "openal-soft",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "1.24.1",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/openal-soft",
+      "homepage": "https://github.com/kcat/openal-soft",
+      "licenseConcluded": "LGPL-2.0-or-later",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "OpenAL Soft is an LGPL-licensed, cross-platform, software implementation of the OpenAL 3D audio API.",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "openal-soft:x64-windows",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "32d730a66beb4897a21e854f426e0345cae6345e08c61139dfaea83bf0c064f5",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "LGPL-2.0-or-later",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-0",
+      "name": "kcat/openal-soft",
+      "downloadLocation": "git+https://github.com/kcat/openal-soft@1.24.1",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "a60e1969bb5678219d8a7ae036d7081d61faa176689ac444802a45f4081aff07a6315575c02784bfce2ec6149c160270082ae076be668f32d79a6fac06513be0"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/openal-soft/portfile.cmake",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0c003a08891478b409f705d3be7a42cece432e9366c5636440eaf4a61fe31aad"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/openal-soft/usage",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "307fa2c65356aa35cb18f6c3b599bf35a4f470c05de6fca0feb269c158eba88e"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/Users/ATA/Desktop/xxx/vcpkg/ports/openal-soft/vcpkg.json",
+      "SPDXID": "SPDXRef-file-2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5b1250d1df6f1a6928a241e55a855af42a18338d9352892a089915f5e26604e3"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

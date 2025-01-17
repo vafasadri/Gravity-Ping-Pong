@@ -1,0 +1,7 @@
+Package: sfml
+Feature: graphics
+Depends: freetype, sfml, stb
+Architecture: x64-windows
+Multi-Arch: same
+Description: Use sfml-graphics library
+Status: install ok installed
